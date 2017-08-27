@@ -1,0 +1,26 @@
+.container-fluid {
+    padding: 0 !important;
+    background: #f1f1f1;
+}
+
+.header-box {
+    background: #039BE5;
+    height: 200px;
+}
+
+.body-box {
+    margin: -100px auto 0 auto;
+    width: 90%;
+    background: #fff;
+    padding: 30px;
+}
+
+.table-container {
+    height: 450px;
+    overflow: auto;
+}
+
+#barChart {
+    width: 562px;
+    height: 462px !important;
+}

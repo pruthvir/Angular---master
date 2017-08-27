@@ -1,0 +1,1 @@
+var geneApp = angular.module("geneApp", []);

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="geneApp">
+
+<head>
+    <title></title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+
+<body ng-controller="GeneCtrl as vm">
+    <div class="container-fluid">
+        <div class="header-box">
+
+        </div>
+        <div class="body-box">
+            <div class="row">
+                <div class="col-lg-12">
+                    <input placeholder="search" type="search" ng-model="geneId">
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="table-container">
+                        <table class="table table-bordered">
+                            <thead>
+                                <th>Alteration</th>
+                                <th>Hugo Symbol</th>
+                                <th>Entrez Gene Id</th>
+                                <th>OncoGene and or TSG</th>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="variant in vm.variants | filter: geneId track by $index">
+                                    <td>{{variant.alteration}}</td>
+                                    <td>{{variant.gene.hugoSymbol}}</td>
+                                    <td>{{variant.gene.entrezGeneId}}</td>
+                                    <td>{{variant.gene.oncogene||variant.gene.tsg}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <canvas id="barChart" width="300" height="300"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/angular.js"></script>
+    <script src="../js/Chart.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/main-service.js"></script>
+    <script src="../js/main-controller.js"></script>
+</body>
+
+</html>
